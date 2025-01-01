@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom'
 
 const MainLayout: React.FC = () => {
   return (
-    <React.Fragment>
+    <React.Fragment> 
         <Header />
-            
+
         <Outlet/>
     </React.Fragment>
   )
