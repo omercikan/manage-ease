@@ -16,22 +16,25 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     AddProductCase: (state: DataState, action: PayloadAction<Product>) => {
-      state.searchedData = [...state.data, action.payload];
-      localStorage.setItem("products", JSON.stringify(state.searchedData));
+      state.data = [...state.data, action.payload];
+      state.searchedData = state.data;
+      localStorage.setItem("products", JSON.stringify(state.data));
     },
 
     RemoveProductCase: (state: DataState, action: PayloadAction<number>) => {
-      state.searchedData = state.data.filter(
+      state.data = state.data.filter(
         (product) => product.id !== action.payload
       );
-      localStorage.setItem("products", JSON.stringify(state.searchedData));
+      state.searchedData = state.data;
+      localStorage.setItem("products", JSON.stringify(state.data));
     },
 
     UpdateProductCase: (state: DataState, action) => {
-      state.searchedData = state.data.map((product) =>
+      state.data = state.data.map((product) =>
         product.id === action.payload.id ? { ...action.payload } : product
       );
-      localStorage.setItem("products", JSON.stringify(state.searchedData));
+      state.searchedData = state.data;
+      localStorage.setItem("products", JSON.stringify(state.data));
     },
 
     SortingProductPrice: (state, action: PayloadAction<string>) => {

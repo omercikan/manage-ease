@@ -76,7 +76,7 @@ const FormModal: React.FC<FormModalProps> = ({ onClose }) => {
           productPrice: "",
           productImage: "",
         }}
-        onSubmit={async (values, actions) => {
+        onSubmit={async (_values, actions) => {
           await new Promise((resolve) => setTimeout(resolve, 250));
           actions.resetForm();
           onClose();
