@@ -1,5 +1,6 @@
 import "./output.css";
 import "./index.css";
+import "./scss/hamburgerMenu.scss";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { MainRouter } from "./router/MainRouter.tsx";

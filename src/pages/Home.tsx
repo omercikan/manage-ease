@@ -1,8 +1,11 @@
 import React from 'react'
+import Product from '../components/Product/Product'
 
 const Home: React.FC = () => {
   return (
-    <div>Home</div>
+    <div className='container mt-3'>
+      <Product/>
+    </div>
   )
 }
 
